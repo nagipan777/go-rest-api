@@ -22,9 +22,9 @@ func NewDB() *gorm.DB {
 	os.Getenv("POSTGRES_DB"), os.Getenv("POSTGRES_USER"),
 	os.Getenv("POSTGRES_PW"), os.Getenv("POSTGRES_HOST"),
 	os.Getenv("POSTGRES_PORT"), os.Getenv("TIME_ZONE")) */
-	url := fmt.Sprintf("postgres://%s:%s@%s:%s/%s", os.Getenv("POSTGRES_USER"),
+	url := fmt.Sprintf("postgres://%s:%s@%s.singapore-postgres.render.com/%s", os.Getenv("POSTGRES_USER"),
 		os.Getenv("POSTGRES_PW"), os.Getenv("POSTGRES_HOST"),
-		os.Getenv("POSTGRES_PORT"), os.Getenv("POSTGRES_DB"))
+		/*os.Getenv("POSTGRES_PORT"),*/ os.Getenv("POSTGRES_DB"))
 	db, err := gorm.Open(postgres.Open(url), &gorm.Config{})
 	if err != nil {
 		log.Fatalln(err)
