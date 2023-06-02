@@ -18,8 +18,8 @@ func NewDB() *gorm.DB {
 		}
 	}
 
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s TimeZone=%s",
-		os.Getenv("POSTGRES_DB"), os.Getenv("POSTGRES_USER"),
+	dsn := fmt.Sprintf("host=localhost user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=%s",
+		/*os.Getenv("POSTGRES_DB"),*/ os.Getenv("POSTGRES_USER"),
 		os.Getenv("POSTGRES_PW"), os.Getenv("POSTGRES_HOST"),
 		os.Getenv("POSTGRES_PORT"), os.Getenv("TIME_ZONE"))
 	//url := fmt.Sprintf("postgres://%s:%s@%s:%s/%s", os.Getenv("POSTGRES_USER"),
