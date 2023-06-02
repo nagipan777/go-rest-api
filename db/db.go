@@ -17,7 +17,7 @@ func NewDB() *gorm.DB {
 			log.Fatalln(err)
 		}
 	}
-	url := fmt.Sprintf("postgres://db_go_lang_user:yrPKLaDQD7Mg3Lj8sPnZdqDDsrK3EgAF@dpg-chsr3cm4dad9muccso2g-a/db_go_lang", os.Getenv("POSTGRES_USER"),
+	url := fmt.Sprintf("postgres://%s:%s@%s:%s/%s", os.Getenv("POSTGRES_USER"),
 		os.Getenv("POSTGRES_PW"), os.Getenv("POSTGRES_HOST"),
 		os.Getenv("POSTGRES_PORT"), os.Getenv("POSTGRES_DB"))
 	db, err := gorm.Open(postgres.Open(url), &gorm.Config{})
